@@ -53,6 +53,233 @@ mobile: {
 }
 };
 
+// =============================================
+// PIXEL CANVAS ANIMATION
+// =============================================
+const canvas = document.getElementById('pixelCanvas');
+const ctx = canvas.getContext('2d');
+
+const PIXEL_SIZE = 6;   // tamanho de cada pixel
+const GAP = 18;         // espaço entre pixels
+const COLORS = [
+  'rgba(184,124,255,',  // roxo principal
+  'rgba(212,168,255,',  // roxo claro
+  'rgba(124,58,237,',   // roxo escuro
+  'rgba(232,121,249,',  // pink roxo
+];
+
+let pixels = [];
+let W, H;
+
+function resize() {
+  const hero = document.getElementById('inicio');
+  W = canvas.width = hero.offsetWidth;
+  H = canvas.height = hero.offsetHeight;
+  initPixels();
+}
+
+function initPixels() {
+  pixels = [];
+  const cols = Math.ceil(W / (PIXEL_SIZE + GAP)) + 1;
+  const rows = Math.ceil(H / (PIXEL_SIZE + GAP)) + 1;
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      // só cria pixel com ~30% de chance — espaçado e sutil
+      if (Math.random() > 0.30) continue;
+      const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+      pixels.push({
+        x: c * (PIXEL_SIZE + GAP),
+        y: r * (PIXEL_SIZE + GAP),
+        color,
+        // opacidade oscila suavemente
+        alpha: Math.random() * 0.18 + 0.04,
+        targetAlpha: Math.random() * 0.18 + 0.04,
+        alphaSpeed: Math.random() * 0.004 + 0.001,
+        // drift lento
+        dx: (Math.random() - 0.5) * 0.12,
+        dy: (Math.random() - 0.5) * 0.12,
+        ox: c * (PIXEL_SIZE + GAP),  // origem x
+        oy: r * (PIXEL_SIZE + GAP),  // origem y
+        driftRange: Math.random() * 6 + 2,
+        phase: Math.random() * Math.PI * 2,
+        speed: Math.random() * 0.008 + 0.003,
+      });
+    }
+  }
+}
+
+let frame = 0;
+function animate() {
+  ctx.clearRect(0, 0, W, H);
+  frame++;
+
+  for (const p of pixels) {
+    // oscilação suave de opacidade
+    if (Math.abs(p.alpha - p.targetAlpha) < 0.005) {
+      p.targetAlpha = Math.random() * 0.18 + 0.03;
+    }
+    p.alpha += (p.targetAlpha - p.alpha) * p.alphaSpeed * 3;
+
+    // drift sinusoidal lento
+    p.phase += p.speed;
+    p.x = p.ox + Math.sin(p.phase) * p.driftRange;
+    p.y = p.oy + Math.cos(p.phase * 0.7) * (p.driftRange * 0.5);
+
+    // desenha o pixel (quadrado)
+    ctx.fillStyle = p.color + p.alpha.toFixed(3) + ')';
+    ctx.fillRect(Math.round(p.x), Math.round(p.y), PIXEL_SIZE, PIXEL_SIZE);
+  }
+
+  requestAnimationFrame(animate);
+}
+
+window.addEventListener('resize', resize);
+resize();
+animate();
+
+
+const quotes = [
+  {
+    text: "Se você não está disposto a desistir, você já venceu metade da batalha.",
+    char: "Rock Lee",
+    source: "Naruto",
+    type: "anime"
+  },
+  {
+    text: "Não posso garantir que você vai encontrar o que procura, mas a chance é apenas 0% assim que você desiste.",
+    char: "Daiki Aomine",
+    source: "Kuroko's Basketball ",
+    type: "anime"
+  },
+  {
+    text: "Respire, você consegue.",
+    char: "Madeline",
+    source: "Celeste",
+    type: "game"
+  },
+  {
+    text: "O que é melhor - nascer bom, ou superar sua natureza maligna através de grande esforço?",
+    char: "Paarthurnax",
+    source: "Skyrim",
+    type: "game"
+  },
+  {
+    text: "O passado nunca muda. Mas o futuro... o futuro ainda pode ser reescrito.",
+    char: "Lightning",
+    source: "Final Fantasy XIII",
+    type: "game"
+  },
+  {
+    text: "A dor que você sente hoje é a força que você vai ter amanhã.",
+    char: "Kratos",
+    source: "God of War",
+    type: "game"
+  },
+  {
+    text: "Não existe atalho para chegar a um lugar que vale a pena.",
+    char: "Monkey D. Luffy",
+    source: "One Piece",
+    type: "anime"
+  },
+  {
+    text: "Há tantas coisas pelas quais vale a pena viver!",
+    char: "Shane",
+    source: "Stardew Valley",
+    type: "game"
+  },
+  {
+    text: "Mais uma volta. Só preciso de mais uma volta para lembrar.",
+    char: "Herói",
+    source: "Loop Hero",
+    type: "game"
+  },
+  {
+    text: "Sonhos não precisam de permissão para existir. Apenas de coragem para serem perseguidos.",
+    char: "Yuno",
+    source: "Black Clover",
+    type: "anime"
+  }
+];
+
+let current = 0;
+let animating = false;
+
+const track = document.getElementById('quotesTrack');
+const dotsEl = document.getElementById('quotesDots');
+const currentEl = document.getElementById('qCurrent');
+const totalEl = document.getElementById('qTotal');
+
+function buildSlides() {
+  track.innerHTML = '';
+  dotsEl.innerHTML = '';
+  totalEl.textContent = quotes.length;
+
+  quotes.forEach((q, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'quote-slide' + (i === 0 ? ' active' : '');
+    slide.innerHTML = `
+      <p class="quote-text">${q.text}</p>
+      <div class="quote-meta">
+        <span class="quote-char">${q.char}</span>
+        <span class="quote-source">— ${q.source}</span>
+        <span class="quote-type">${q.type}</span>
+      </div>`;
+    track.appendChild(slide);
+
+    const dot = document.createElement('div');
+    dot.className = 'q-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(dot);
+  });
+}
+
+function goTo(next, dir) {
+  if (animating || next === current) return;
+  animating = true;
+  const slides = track.querySelectorAll('.quote-slide');
+  const dots = dotsEl.querySelectorAll('.q-dot');
+  const exitClass = dir === 'prev' ? 'exit-right' : 'exit-left';
+
+  slides[current].classList.remove('active');
+  slides[current].classList.add(exitClass);
+
+  setTimeout(() => {
+    slides[current].classList.remove(exitClass);
+    current = next;
+    slides[current].style.transform = dir === 'prev' ? 'translateX(-40px)' : 'translateX(40px)';
+    slides[current].style.opacity = '0';
+    slides[current].classList.add('active');
+    requestAnimationFrame(() => {
+      slides[current].style.transform = '';
+      slides[current].style.opacity = '';
+    });
+    dots.forEach((d,i) => d.classList.toggle('active', i === current));
+    currentEl.textContent = current + 1;
+    setTimeout(() => { animating = false; }, 450);
+  }, 300);
+}
+
+document.getElementById('qPrev').addEventListener('click', () => {
+  const prev = (current - 1 + quotes.length) % quotes.length;
+  goTo(prev, 'prev');
+});
+document.getElementById('qNext').addEventListener('click', () => {
+  const next = (current + 1) % quotes.length;
+  goTo(next, 'next');
+});
+
+// keyboard navigation
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft') { const p=(current-1+quotes.length)%quotes.length; goTo(p,'prev'); }
+  if (e.key === 'ArrowRight') { const n=(current+1)%quotes.length; goTo(n,'next'); }
+});
+
+buildSlides();
+
+
+
+
 function openModal(id) {
 const p = projects[id];
 if (!p) return;

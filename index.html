@@ -13,7 +13,7 @@
 <div class="nav-logo">thaina_rossinoli<span>.dev</span></div>
 <div class="nav-links">
     <a href="#sobre">sobre</a>
-    <a href="#stack">stack</a>
+    <a href="#conhecimento">conhecimento</a>
     <a href="#projetos">projetos</a>
     <a href="#contato">contato</a>
 </div>
@@ -21,13 +21,14 @@
 
 <!-- HERO -->
 <section class="hero" id="inicio">
+<canvas id="pixelCanvas"></canvas>
 <div class="hero-orb"></div><div class="hero-orb2"></div>
 <div style="position:relative;">
     <div class="status-pill"><span class="status-dot"></span>disponível para oportunidades</div>
-    <div class="hero-eyebrow">fullstack developer &amp; qa engineer</div>
+    <div class="hero-eyebrow">fullstack developer &amp; requirements analyst</div>
     <h1 class="hero-name">THAINA<br><span class="dim">ROSSI</span><span class="acc">NOLI</span></h1>
-    <p class="hero-sub">construindo robusto. testando com rigor.</p>
-    <p class="hero-bio">Desenvolvedora fullstack com trajetória do <em>HTML ao Java nativo</em> — passando por backend, banco de dados e mobile. Foco em <em>aplicações robustas</em> e na garantia de que cada linha entregue excelência.</p>
+    <p class="hero-sub">java mobile • front-end • análise de sistemas</p>
+    <p class="hero-bio">Soluções <em>Mobile e Front-end</em> com rigor técnico. Desenvolvedora com foco em <em>Java</em>, modelagem de dados e arquitetura de software testável.</p>
     <div class="hero-actions">
     <a href="#projetos" class="btn-p">ver projetos</a>
     <a href="#contato" class="btn-o">entrar em contato</a>
@@ -38,8 +39,8 @@
 <!-- TICKER -->
 <div class="ticker">
 <div class="ticker-track">
-    <span class="d-item">html</span><span class="d-sep">/</span><span class="d-item">css</span><span class="d-sep">/</span><span class="d-item">javascript</span><span class="d-sep">/</span><span class="d-item">php</span><span class="d-sep">/</span><span class="d-item">laravel</span><span class="d-sep">/</span><span class="d-item">mysql</span><span class="d-sep">/</span><span class="d-item">java</span><span class="d-sep">/</span><span class="d-item">android studio</span><span class="d-sep">/</span><span class="d-item">figma</span><span class="d-sep">/</span><span class="d-item">bootstrap</span><span class="d-sep">/</span><span class="d-item">qa &amp; testes</span><span class="d-sep">/</span><span class="d-item">git</span><span class="d-sep">/</span><span class="d-item">pixel art</span><span class="d-sep">/</span>
-    <span class="d-item">html</span><span class="d-sep">/</span><span class="d-item">css</span><span class="d-sep">/</span><span class="d-item">javascript</span><span class="d-sep">/</span><span class="d-item">php</span><span class="d-sep">/</span><span class="d-item">laravel</span><span class="d-sep">/</span><span class="d-item">mysql</span><span class="d-sep">/</span><span class="d-item">java</span><span class="d-sep">/</span><span class="d-item">android studio</span><span class="d-sep">/</span><span class="d-item">figma</span><span class="d-sep">/</span><span class="d-item">bootstrap</span><span class="d-sep">/</span><span class="d-item">qa &amp; testes</span><span class="d-sep">/</span><span class="d-item">git</span><span class="d-sep">/</span><span class="d-item">pixel art</span><span class="d-sep">/</span>
+    <span class="d-item">html</span><span class="d-sep">/</span><span class="d-item">css</span><span class="d-sep">/</span><span class="d-item">javascript</span><span class="d-sep">/</span><span class="d-item">php</span><span class="d-sep">/</span><span class="d-item">laravel</span><span class="d-sep">/</span><span class="d-item">mysql</span><span class="d-sep">/</span><span class="d-item">java</span><span class="d-sep">/</span><span class="d-item">android studio</span><span class="d-sep">/</span><span class="d-item">requirements analysis</span><span class="d-sep">/</span><span class="d-item">software quality</span><span class="d-sep">/</span><span class="d-item">figma</span><span class="d-sep">/</span><span class="d-item">photoshop</span><span class="d-sep">/</span><span class="d-item">coreldraw</span><span class="d-sep">/</span><span class="d-item">aseprite</span><span class="d-sep">/</span><span class="d-item">pixel art</span><span class="d-sep">/</span><span class="d-item">godot engine</span><span class="d-sep">/</span><span class="d-item">git</span><span class="d-sep">/</span>
+    <span class="d-item">html</span><span class="d-sep">/</span><span class="d-item">css</span><span class="d-sep">/</span><span class="d-item">javascript</span><span class="d-sep">/</span><span class="d-item">php</span><span class="d-sep">/</span><span class="d-item">laravel</span><span class="d-sep">/</span><span class="d-item">mysql</span><span class="d-sep">/</span><span class="d-item">java</span><span class="d-sep">/</span><span class="d-item">android studio</span><span class="d-sep">/</span><span class="d-item">requirements analysis</span><span class="d-sep">/</span><span class="d-item">software quality</span><span class="d-sep">/</span><span class="d-item">figma</span><span class="d-sep">/</span><span class="d-item">photoshop</span><span class="d-sep">/</span><span class="d-item">coreldraw</span><span class="d-sep">/</span><span class="d-item">aseprite</span><span class="d-sep">/</span><span class="d-item">pixel art</span><span class="d-sep">/</span><span class="d-item">godot engine</span><span class="d-sep">/</span><span class="d-item">git</span><span class="d-sep">/</span>
 </div>
 </div>
 
@@ -47,43 +48,59 @@
 <section class="sec" id="sobre">
 <div class="sec-label">sobre mim</div>
 <div class="sobre-layout">
-    <div class="sobre-text">
-    <p>Olá, sou <em>Thaina Rossinoli</em> — desenvolvedora fullstack com uma jornada que começou no HTML e foi se aprofundando camada por camada.</p>
-    <p>Do front com HTML e CSS, passei pelos frameworks, mergulhei no backend com <em>PHP e Laravel</em>, aprendi a modelar bancos relacionais com <em>MySQL</em>, e fui ao mobile com <em>Java nativo no Android Studio</em>.</p>
-    <p>Em paralelo, desenvolvi o olhar crítico de <em>QA</em> — porque código de qualidade é código que pode ser testado, mantido e que resolve problemas reais.</p>
-    <p>Busco oportunidades em <em>CLT ou freela</em>, e quero também <em>inspirar</em> quem está começando a trilhar esse caminho na tecnologia.</p>
-    </div>
+<div class="sobre-text">
+    <p>Sou a <em>Thaina Rossinoli</em>. Sou desenvolvedora focada em <em>Mobile Nativo (Java)</em> e <em>Front-end</em>, apaixonada por entender a lógica dos sistemas — do bit ao pixel. No meu tempo livre, o que eu mais gosto é de jogar e me desafiar criando meus próprios games.</p>
+    <p>Minha atuação une o desenvolvimento técnico à organização da <em>Análise de Requisitos</em> e estrutura de <em>Bancos de Dados</em>. Tenho facilidade em transformar ideias em estruturas sólidas, sempre com atenção total aos detalhes.</p>
+    <p>Aplico meu lado perfeccionista no estudo constante de <em>QA</em> — porque código de qualidade é aquele que pode ser testado, mantido e que resolve problemas reais.</p>
+    <p>Atualmente, busco oportunidades em <em>Mobile, Front-end ou Análise de Requisitos</em>, seja em regime <em>CLT ou Freela</em>.</p>
+</div>
     <div class="sobre-metrics">
-    <div class="metric"><div class="metric-val">5+</div><div class="metric-label">projetos<br>entregues</div></div>
-    <div class="metric"><div class="metric-val">6+</div><div class="metric-label">linguagens<br>& frameworks</div></div>
-    <div class="metric"><div class="metric-val">full</div><div class="metric-label">cobertura<br>de stack</div></div>
-    <div class="metric"><div class="metric-val">qa</div><div class="metric-label">mindset de<br>qualidade</div></div>
+    <div class="metric"><div class="metric-val">25+</div><div class="metric-label">projetos<br>entregues</div></div>
+    <div class="metric"><div class="metric-val">14+</div><div class="metric-label">linguagens<br>& frameworks</div></div>
+    <div class="metric"><div class="metric-val">full</div><div class="metric-label">cobertura<br>de conhecimento</div></div>
+    <!--<div class="metric"><div class="metric-val">qa</div><div class="metric-label">mindset de<br>qualidade</div></div>-->
     </div>
 </div>
 </section>
 
 <!-- STACK -->
-<section class="sec sec-bg" id="stack">
+<section class="sec sec-bg" id="conhecimento">
 <div class="sec-label">tecnologias</div>
 <div class="stack-grid">
-    <div class="s-cell"><div class="s-cell-cat">frontend</div><div class="s-cell-name">HTML5</div></div>
+<div class="s-cell"><div class="s-cell-cat">frontend</div><div class="s-cell-name">HTML5</div></div>
     <div class="s-cell"><div class="s-cell-cat">frontend</div><div class="s-cell-name">CSS3</div></div>
     <div class="s-cell"><div class="s-cell-cat">frontend</div><div class="s-cell-name">JavaScript</div></div>
+    
+    <div class="s-cell"><div class="s-cell-cat">backend</div><div class="s-cell-name">PHP</div></div>
+    <div class="s-cell"><div class="s-cell-cat">backend</div><div class="s-cell-name">C#</div></div>
+    <div class="s-cell"><div class="s-cell-cat">backend</div><div class="s-cell-name">C</div></div>
+    <div class="s-cell"><div class="s-cell-cat">framework php</div><div class="s-cell-name">Laravel</div></div>
+    
     <div class="s-cell"><div class="s-cell-cat">framework css</div><div class="s-cell-name">Bootstrap</div></div>
     <div class="s-cell"><div class="s-cell-cat">framework css</div><div class="s-cell-name">Materialize</div></div>
-    <div class="s-cell"><div class="s-cell-cat">backend</div><div class="s-cell-name">PHP</div></div>
-    <div class="s-cell"><div class="s-cell-cat">framework php</div><div class="s-cell-name">Laravel</div></div>
+    
     <div class="s-cell"><div class="s-cell-cat">banco de dados</div><div class="s-cell-name">MySQL</div></div>
-    <div class="s-cell"><div class="s-cell-cat">banco de dados</div><div class="s-cell-name">Workbench</div></div>
     <div class="s-cell"><div class="s-cell-cat">banco de dados</div><div class="s-cell-name">SQL Script</div></div>
+    
     <div class="s-cell"><div class="s-cell-cat">mobile</div><div class="s-cell-name">Java</div></div>
     <div class="s-cell"><div class="s-cell-cat">mobile</div><div class="s-cell-name">Android Studio</div></div>
+    <div class="s-cell"><div class="s-cell-cat">gamedev</div><div class="s-cell-name">Godot Engine</div></div>
+    
     <div class="s-cell"><div class="s-cell-cat">design</div><div class="s-cell-name">Figma</div></div>
-    <div class="s-cell"><div class="s-cell-cat">qualidade</div><div class="s-cell-name">QA & Testes</div></div>
+    <div class="s-cell"><div class="s-cell-cat">design</div><div class="s-cell-name">Photoshop</div></div>
+    <div class="s-cell"><div class="s-cell-cat">design</div><div class="s-cell-name">CorelDraw</div></div>
     <div class="s-cell"><div class="s-cell-cat">arte</div><div class="s-cell-name">Pixel Art</div></div>
+    <div class="s-cell"><div class="s-cell-cat">arte</div><div class="s-cell-name">Aseprite</div></div>
+    
+    <div class="s-cell"><div class="s-cell-cat">qualidade</div><div class="s-cell-name">QA & Testes</div></div>
+    <div class="s-cell"><div class="s-cell-cat">analista</div><div class="s-cell-name">Requisitos</div></div>
     <div class="s-cell"><div class="s-cell-cat">versionamento</div><div class="s-cell-name">Git / GitHub</div></div>
     <div class="s-cell"><div class="s-cell-cat">ux</div><div class="s-cell-name">Prototipagem</div></div>
     <div class="s-cell"><div class="s-cell-cat">ux</div><div class="s-cell-name">Usabilidade</div></div>
+
+    <div class="s-cell"><div class="s-cell-cat">metodologia</div><div class="s-cell-name">Agile / Scrum</div></div>
+    <div class="s-cell"><div class="s-cell-cat">mobile</div><div class="s-cell-name">Flutter</div></div>
+<div class="s-cell"><div class="s-cell-cat">mobile</div><div class="s-cell-name">Ionic</div></div>
 </div>
 </section>
 
@@ -92,7 +109,7 @@
 <div class="sec-label">projetos</div>
 <div class="proj-grid">
 
-    <!-- 001 LIBRANDO FEATURED -->
+    <!-- 003 LIBRANDO FEATURED -->
     <div class="proj-card feat" onclick="openModal('librando')">
     <div class="proj-thumb">
         <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
@@ -123,7 +140,7 @@
     </div>
     <div class="proj-body">
         <span class="proj-badge">destaque</span>
-        <div class="proj-num">projeto 001</div>
+        <div class="proj-num">projeto 003</div>
         <div class="proj-title">Librando e Aprendendo</div>
         <p class="proj-desc">Jogo educativo interativo para aprender Libras — Língua Brasileira de Sinais. Tecnologia a serviço da inclusão, tornando o aprendizado acessível e envolvente para todos.</p>
         <div class="proj-tags">
@@ -136,7 +153,56 @@
     </div>
     </div>
 
-    <!-- 002 PORTFOLIO -->
+    <!-- 001 PORTFOLIO -->
+    <div class="proj-card" onclick="openModal('portfolio')">
+    <div class="proj-thumb">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="200" fill="#0d0a1a"/>
+        <!-- pixel art grid -->
+        <g opacity="0.6">
+            <rect x="140" y="40" width="12" height="12" fill="#a855f7"/>
+            <rect x="152" y="40" width="12" height="12" fill="#c084fc"/>
+            <rect x="164" y="40" width="12" height="12" fill="#a855f7"/>
+            <rect x="128" y="52" width="12" height="12" fill="#7c3aed"/>
+            <rect x="140" y="52" width="12" height="12" fill="#c084fc"/>
+            <rect x="152" y="52" width="12" height="12" fill="#e879f9"/>
+            <rect x="164" y="52" width="12" height="12" fill="#c084fc"/>
+            <rect x="176" y="52" width="12" height="12" fill="#7c3aed"/>
+            <rect x="128" y="64" width="12" height="12" fill="#a855f7"/>
+            <rect x="140" y="64" width="12" height="12" fill="#e879f9"/>
+            <rect x="152" y="64" width="12" height="12" fill="#f0abfc"/>
+            <rect x="164" y="64" width="12" height="12" fill="#e879f9"/>
+            <rect x="176" y="64" width="12" height="12" fill="#a855f7"/>
+            <rect x="140" y="76" width="12" height="12" fill="#c084fc"/>
+            <rect x="152" y="76" width="12" height="12" fill="#a855f7"/>
+            <rect x="164" y="76" width="12" height="12" fill="#c084fc"/>
+            <rect x="152" y="88" width="12" height="12" fill="#7c3aed"/>
+            <!-- more pixels -->
+            <rect x="220" y="60" width="8" height="8" fill="#a855f7" opacity="0.5"/>
+            <rect x="232" y="56" width="8" height="8" fill="#c084fc" opacity="0.4"/>
+            <rect x="244" y="64" width="8" height="8" fill="#7c3aed" opacity="0.5"/>
+            <rect x="220" y="72" width="8" height="8" fill="#c084fc" opacity="0.3"/>
+            <rect x="232" y="68" width="8" height="8" fill="#a855f7" opacity="0.4"/>
+        </g>
+        <text x="200" y="155" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="rgba(168,85,247,0.35)" letter-spacing="3">HTML · CSS · PIXEL ART</text>
+        </svg>
+        <div class="proj-thumb-overlay"></div>
+    </div>
+    <div class="proj-body">
+        <div class="proj-num">projeto 001</div>
+        <div class="proj-title">Portfólio Digital</div>
+        <p class="proj-desc">Portfólio desenvolvido com HTML, CSS e Bootstrap — com pixel art criada à mão como elemento artístico e identidade visual única.</p>
+        <div class="proj-tags">
+        <span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span class="proj-tag">Bootstrap</span><span class="proj-tag">Pixel Art</span>
+        </div>
+        <div class="proj-footer">
+        <button class="btn-saiba" onclick="event.stopPropagation();openModal('portfolio')">saiba mais</button>
+        <a class="btn-gh" href="https://github.com/rossinoli/portfolio" target="_blank" onclick="event.stopPropagation()">GitHub →</a>
+        </div>
+    </div>
+    </div>
+
+        <!-- 002 PORTFOLIO -->
     <div class="proj-card" onclick="openModal('portfolio')">
     <div class="proj-thumb">
         <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
@@ -185,7 +251,7 @@
     </div>
     </div>
 
-    <!-- 003 CASSINO -->
+    <!-- 004 CASSINO -->
     <div class="proj-card" onclick="openModal('cassino')">
     <div class="proj-thumb">
         <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
@@ -219,7 +285,7 @@
         <div class="proj-thumb-overlay"></div>
     </div>
     <div class="proj-body">
-        <div class="proj-num">projeto 003</div>
+        <div class="proj-num">projeto 004</div>
         <div class="proj-title">Cassino com Banco de Dados</div>
         <p class="proj-desc">Modelagem e implementação completa de banco de dados relacional para sistema de cassino — scripts SQL avançados, relacionamentos e consultas complexas.</p>
         <div class="proj-tags">
@@ -231,7 +297,7 @@
     </div>
     </div>
 
-    <!-- 004 FIGMA -->
+    <!-- 005 FIGMA -->
     <div class="proj-card" onclick="openModal('figma')">
     <div class="proj-thumb">
         <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
@@ -263,7 +329,7 @@
         <div class="proj-thumb-overlay"></div>
     </div>
     <div class="proj-body">
-        <div class="proj-num">projeto 004</div>
+        <div class="proj-num">projeto 005</div>
         <div class="proj-title">Prototipagem UX/UI — Ciranda</div>
         <p class="proj-desc">Protótipo de alta fidelidade no Figma com foco em usabilidade, arquitetura de informação e fluxo de navegação intuitivo.</p>
         <div class="proj-tags">
@@ -275,7 +341,7 @@
     </div>
     </div>
 
-    <!-- 005 MOBILE -->
+    <!-- 006 MOBILE -->
     <div class="proj-card" onclick="openModal('mobile')">
     <div class="proj-thumb">
         <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
@@ -302,7 +368,7 @@
         <div class="proj-thumb-overlay"></div>
     </div>
     <div class="proj-body">
-        <div class="proj-num">projeto 005</div>
+        <div class="proj-num">projeto 006</div>
         <div class="proj-title">Jogo Educativo Mobile</div>
         <p class="proj-desc">Jogo educativo desenvolvido em Java nativo com Android Studio — explorando transição e animação como mecânicas de aprendizado em dispositivos Android.</p>
         <div class="proj-tags">
@@ -323,7 +389,7 @@
 <div class="contato-layout">
     <div>
     <h3 class="contato-headline">vamos<br><span class="p">trabalhar</span><br>juntos?</h3>
-    <p class="contato-sub">Aberta a CLT, freela e projetos que façam diferença. Se você tem algo interessante — ou só quer trocar uma ideia — manda mensagem.</p>
+    <p class="contato-sub">Disponível para novos desafios em desenvolvimento e análise de sistemas. Se você busca uma profissional para transformar requisitos em soluções reais, vamos conversar.</p>
     <a href="mailto:" class="btn-p">enviar mensagem</a>
     </div>
     <div class="contato-links">
@@ -339,9 +405,24 @@
 </div>
 </section>
 
+<section id="quotes">
+  <div class="quotes-wrapper">
+    <div class="quotes-deco">"</div>
+    <div class="quotes-track" id="quotesTrack"></div>
+    <div class="quotes-nav">
+      <div class="quotes-arrows">
+        <button class="q-arrow" id="qPrev" aria-label="anterior">←</button>
+        <button class="q-arrow" id="qNext" aria-label="próxima">→</button>
+      </div>
+      <div class="quotes-dots" id="quotesDots"></div>
+      <div class="quotes-counter"><span id="qCurrent">1</span> / <span id="qTotal">1</span></div>
+    </div>
+  </div>
+</section>
+
 <footer>
 <div class="f-copy">© 2025 thaina rossinoli — todos os direitos reservados</div>
-<div class="f-right">fullstack dev <span>&</span> qa engineer</div>
+<img src="fatec.png" alt="Logo Thainá" class="footer-logo">
 </footer>
 
 <!-- ===== MODAIS ===== -->
