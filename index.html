@@ -1,243 +1,642 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thaina Rossinoli | Fullstack & QA</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <title>Thaina Rossinoli — Desenvolvedora Fullstack · Mobile & Front-end</title>
+    <meta name="description" content="Portfólio de Thaina Rossinoli, desenvolvedora fullstack especializada em Mobile Java, Front-end e Análise de Requisitos. Graduanda em ADS na Fatec.">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<nav>
-<div class="nav-logo">thaina_rossinoli<span>.dev</span></div>
-<div class="nav-links">
-    <a href="#sobre">sobre</a>
-    <a href="#conhecimento">conhecimento</a>
-    <a href="#projetos">projetos</a>
-    <a href="#contato">contato</a>
+    <nav aria-label="Navegação principal">
+        <a href="#inicio" class="nav-logo" aria-label="Thaina Rossinoli — ir para o início">
+            thaina_rossinoli<span class="dim">.dev</span><span class="cursor" aria-hidden="true"></span>
+        </a>
+        <div class="nav-links">
+            <a href="#sobre">sobre</a>
+            <a href="#stack">stack</a>
+            <a href="#projetos">projetos</a>
+            <a href="#contato">contato</a>
+        </div>
+        <button class="mob-menu-btn" id="mobBtn" onclick="openMobNav()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobNav">
+            <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+    </nav>
+
+    <!-- Menu mobile em tela cheia -->
+    <nav class="mob-nav" id="mobNav" aria-label="Menu de navegação móvel" aria-hidden="true">
+        <button class="mob-nav-close" onclick="closeMobNav()" aria-label="Fechar menu de navegação">✕</button>
+        <a href="#sobre" onclick="closeMobNav()">sobre</a>
+        <a href="#stack" onclick="closeMobNav()">stack</a>
+        <a href="#projetos" onclick="closeMobNav()">projetos</a>
+        <a href="#contato" onclick="closeMobNav()">contato</a>
+    </nav>
+
+    <main id="main-content">
+
+        <section id="inicio" aria-label="Apresentação">
+            <div class="hero-bg" aria-hidden="true"></div>
+                <div class="hero-orb-b" aria-hidden="true"></div>
+                <div class="hero-left">
+                    <div class="select-header">select character</div>
+
+                    <div class="status-pill" role="status">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    disponível para oportunidades
+                    </div>
+
+                    <!-- Caixa do personagem-->
+                    <div class="char-box">
+                    <h1 class="char-name" aria-label="Thaina Rossinoli">
+                        <span aria-hidden="true">THAINA<br>
+                        <span class="ghost">ROSSI</span><span class="acc">NOLI</span></span>
+                    </h1>
+                    <p class="char-class">fullstack developer · requirements analyst</p>
+
+                    <!-- Barras de stats-->
+                    <div class="stats" role="group" aria-label="Principais áreas de atuação e nível de experiência">
+                            <div class="stat-row">
+                                <span class="stat-label" id="lbl-mobile">Mobile</span>
+                                    <div class="stat-bar" role="img" aria-labelledby="lbl-mobile" aria-label="Mobile: nível 92 de 100"><div class="stat-fill" style="width:92%"></div></div>
+                                <span class="stat-val" aria-hidden="true">92</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label" id="lbl-front">Front-end</span>
+                                    <div class="stat-bar" role="img" aria-labelledby="lbl-front" aria-label="Front-end: nível 88 de 100"><div class="stat-fill" style="width:88%"></div></div>
+                                <span class="stat-val" aria-hidden="true">88</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label" id="lbl-ux">UX/UI</span>
+                                    <div class="stat-bar" role="img" aria-labelledby="lbl-ux" aria-label="UX/UI: nível 80 de 100"><div class="stat-fill azul" style="width:80%"></div></div>
+                                <span class="stat-val" aria-hidden="true">80</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label" id="lbl-back">Back-end</span>
+                                    <div class="stat-bar" role="img" aria-labelledby="lbl-back" aria-label="Back-end: nível 72 de 100"><div class="stat-fill" style="width:72%"></div></div>
+                                <span class="stat-val" aria-hidden="true">72</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label" id="lbl-game">Game Dev</span>
+                                    <div class="stat-bar" role="img" aria-labelledby="lbl-game" aria-label="Game Dev: nível 65 de 100"><div class="stat-fill azul" style="width:65%"></div></div>
+                                <span class="stat-val" aria-hidden="true">65</span>
+                            </div>
+                    </div>
+                    </div>
+
+                    <!-- Botões de ação -->
+                    <div class="hero-actions">
+                    <a href="#" class="btn-p">Curriculo</a>
+                    <a href="#contato" class="btn-o">contato</a>
+                </div>
+            </div>
+
+            <!-- COLUNA DIREITA: foto de perfil e citação pessoal -->
+            <div class="hero-right">
+                <h2 class="hero-right-header">// player info</h2>
+
+                <!-- Moldura da foto: por padrão mostra o placeholder "coloque sua foto aqui".
+                    Quando a Thaina trocar o "src" da img por uma foto real, o evento onload
+                    oculta o placeholder e exibe a foto automaticamente. -->
+                <div class="player-photo-frame">
+                <img src="SUA_FOTO_AQUI.jpg" alt="Foto de Thaina Rossinoli" class="player-photo" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                <div class="player-photo-placeholder">
+                    <span aria-hidden="true">◻</span>
+                    <span>coloque sua foto aqui</span>
+                </div>
+                </div>
+
+                <p class="hero-quote">
+                Desenvolvedora com a mente de <em>analista</em> e o olho de <em>artista</em> — do bit ao pixel, cada detalhe importa.
+                </p>
+            </div>
+            </section>
+
+            <!-- FAIXA DESLIZANTE -->
+            <div class="ticker">
+            <div class="ticker-track">
+                <span class="ti">java</span><span class="ts">◆</span>
+                <span class="ti">flutter</span><span class="ts">◆</span>
+                <span class="ti">html · css · js</span><span class="ts">◆</span>
+                <span class="ti">laravel</span><span class="ts">◆</span>
+                <span class="ti">mysql</span><span class="ts">◆</span>
+                <span class="ti">figma</span><span class="ts">◆</span>
+                <span class="ti">pixel art</span><span class="ts">◆</span>
+                <span class="ti">godot engine</span><span class="ts">◆</span>
+                <span class="ti">aseprite</span><span class="ts">◆</span>
+                <span class="ti">android studio</span><span class="ts">◆</span>
+                <span class="ti">análise de requisitos</span><span class="ts">◆</span>
+                <span class="ti">qa & testes</span><span class="ts">◆</span>
+                <!-- início da repetição -->
+                <span class="ti">java</span><span class="ts">◆</span>
+                <span class="ti">flutter</span><span class="ts">◆</span>
+                <span class="ti">html · css · js</span><span class="ts">◆</span>
+                <span class="ti">laravel</span><span class="ts">◆</span>
+                <span class="ti">mysql</span><span class="ts">◆</span>
+                <span class="ti">figma</span><span class="ts">◆</span>
+                <span class="ti">pixel art</span><span class="ts">◆</span>
+                <span class="ti">godot engine</span><span class="ts">◆</span>
+                <span class="ti">aseprite</span><span class="ts">◆</span>
+                <span class="ti">android studio</span><span class="ts">◆</span>
+                <span class="ti">análise de requisitos</span><span class="ts">◆</span>
+                <span class="ti">qa & testes</span><span class="ts">◆</span>
+            </div>
+            </div>
+
+            <!-- SEÇÃO SOBRE MIM -->
+            <section class="sec" id="sobre" aria-label="Sobre mim">
+            <div class="sec-head">
+                <div class="sec-head-bar" aria-hidden="true"></div>
+                <h2 class="sec-head-title">sobre mim</h2>
+                <span class="sec-head-sub">player profile</span>
+            </div>
+            <div class="sobre-grid">
+                <!-- coluna esquerda -->
+                <div class="sobre-panel sobre-bio">
+                    <p>Sou a <em>Thaina Rossinoli</em>. Desenvolvedora focada em <em>Mobile Nativo (Java)</em> e <em>Front-end</em>, apaixonada pela lógica dos sistemas — do bit ao pixel.</p>
+                    <p>Minha atuação une desenvolvimento técnico à <em>Análise de Requisitos</em> e estrutura de <em>Bancos de Dados</em>. Tenho facilidade em transformar ideias em estruturas sólidas, sempre com atenção total aos detalhes.</p>
+                    <p>No tempo livre, crio games e <em>pixel art</em> no Godot e Aseprite — e consome animes com a mesma seriedade que refatora código.</p>
+                    <p>Buscando oportunidades em <em>Mobile, Front-end ou Análise de Requisitos</em>, em regime <em>CLT ou Freela</em>.</p>
+                </div>
+                <!-- coluna direita -->
+                <div class="sobre-panel">
+                    <h3 class="ficha-title">ficha de personagem</h3>
+                    <div class="ficha-rows" role="table" aria-label="Ficha de personagem">
+                        <div class="ficha-row" role="row">
+                            <div class="ficha-cell" role="cell"><span class="fc-label">nome</span><span class="fc-val">Thaina Rossinoli</span></div>
+                            <div class="ficha-cell" role="cell"><span class="fc-label">classe</span><span class="fc-val">Fullstack Dev</span></div>
+                        </div>
+                        <div class="ficha-row" role="row">
+                            <div class="ficha-cell" role="cell"><span class="fc-label">formação</span><span class="fc-val">Fatec — Sistema para Internet</span></div>
+                            <div class="ficha-cell" role="cell"><span class="fc-label">modo</span><span class="fc-val">CLT ou Freela</span></div>
+                        </div>
+                        <div class="ficha-row" role="row">
+                            <div class="ficha-cell" role="cell"><span class="fc-label">spec</span><span class="fc-val">Mobile · Front</span></div>
+                            <div class="ficha-cell" role="cell"><span class="fc-label">side quest</span><span class="fc-val">Pixel Art · Games</span></div>
+                        </div>
+                    </div>
+                    <div class="ficha-metrics" role="group" aria-label="Métricas resumidas">
+                        <div class="f-metric" role="text" aria-label="Mais de 25 projetos"><div class="f-metric-val">25+</div><div class="f-metric-label">projetos</div></div>
+                        <div class="f-metric" role="text" aria-label="Mais de 14 linguagens"><div class="f-metric-val">14+</div><div class="f-metric-label">linguagens</div></div>
+                        <div class="f-metric" role="text" aria-label="Atuação fullstack"><div class="f-metric-val">full</div><div class="f-metric-label">stack</div></div>
+                    </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- SEÇÃO STACK -->
+            <section class="sec sec-bg" id="stack" aria-label="Tecnologias">
+            <div class="sec-head">
+                <div class="sec-head-bar" aria-hidden="true"></div>
+                <h2 class="sec-head-title">tecnologias</h2>
+                <span class="sec-head-sub">status screen</span>
+            </div>
+
+            <div class="status-screen">
+                <!-- barra de topo -->
+                <div class="ss-bar">
+                <div class="ss-dots" aria-hidden="true"><div class="ss-dot r"></div><div class="ss-dot y"></div><div class="ss-dot g"></div></div>
+                <div class="ss-bar-title">skills.config — thaina_rossinoli</div>
+                <div class="ss-bar-info">14+ linguagens & frameworks</div>
+                </div>
+                <div class="ss-body">
+                <!-- LISTA DE ABAS -->
+                <div class="ss-cats" id="ssCats" role="tablist" aria-label="Categorias de tecnologia" aria-orientation="vertical">
+                    <button class="ss-cat active" id="tab-frontend" role="tab" aria-selected="true" aria-controls="panel-frontend" data-panel="frontend" onclick="switchPanel(this)">
+                        <span class="ss-cat-icon" aria-hidden="true">⌨</span>
+                        <span class="ss-cat-name">Front-end</span>
+                    </button>
+                    <button class="ss-cat" id="tab-backend" role="tab" aria-selected="false" aria-controls="panel-backend" tabindex="-1" data-panel="backend" onclick="switchPanel(this)">
+                        <span class="ss-cat-icon" aria-hidden="true">⚙</span>
+                        <span class="ss-cat-name">Back-end</span>
+                    </button>
+                    <button class="ss-cat" id="tab-mobile" role="tab" aria-selected="false" aria-controls="panel-mobile" tabindex="-1" data-panel="mobile" onclick="switchPanel(this)">
+                        <span class="ss-cat-icon" aria-hidden="true">◻</span>
+                        <span class="ss-cat-name">Mobile</span>
+                    </button>
+                    <button class="ss-cat" id="tab-database" role="tab" aria-selected="false" aria-controls="panel-database" tabindex="-1" data-panel="database" onclick="switchPanel(this)">
+                        <span class="ss-cat-icon" aria-hidden="true">◈</span>
+                        <span class="ss-cat-name">Banco</span>
+                    </button>
+                    <button class="ss-cat" id="tab-design" role="tab" aria-selected="false" aria-controls="panel-design" tabindex="-1" data-panel="design" onclick="switchPanel(this)">
+                        <span class="ss-cat-icon" aria-hidden="true">✦</span>
+                        <span class="ss-cat-name">Design</span>
+                    </button>
+                    <button class="ss-cat" id="tab-game" role="tab" aria-selected="false" aria-controls="panel-game" tabindex="-1" data-panel="game" onclick="switchPanel(this)">
+                        <span class="ss-cat-icon" aria-hidden="true">▶</span>
+                        <span class="ss-cat-name">Game Dev</span>
+                    </button>
+                    <button class="ss-cat" id="tab-qa" role="tab" aria-selected="false" aria-controls="panel-qa" tabindex="-1" data-panel="qa" onclick="switchPanel(this)">
+                        <span class="ss-cat-icon" aria-hidden="true">✓</span>
+                        <span class="ss-cat-name">QA & Análise</span>
+                    </button>
+                </div>
+                <!-- PAINÉIS DE CONTEÚDO -->
+                <div class="ss-panel">
+                    <div class="ss-panel-inner active" id="panel-frontend" role="tabpanel" aria-labelledby="tab-frontend" tabindex="0">
+                    <h3 class="ss-panel-title">Front-end</h3>
+                        <ul class="skill-grid">
+                            <li class="skill-item"><span class="si-cat">linguagem</span><span class="si-name">HTML5</span></li>
+                            <li class="skill-item"><span class="si-cat">linguagem</span><span class="si-name">CSS3</span></li>
+                            <li class="skill-item"><span class="si-cat">linguagem</span><span class="si-name">JavaScript</span></li>
+                            <li class="skill-item"><span class="si-cat">framework</span><span class="si-name">Bootstrap</span></li>
+                            <li class="skill-item"><span class="si-cat">framework</span><span class="si-name">Materialize</span></li>
+                        </ul>
+                    </div>
+                    <div class="ss-panel-inner" id="panel-backend" role="tabpanel" aria-labelledby="tab-backend" tabindex="0" hidden>
+                    <h3 class="ss-panel-title">Back-end</h3>
+                        <ul class="skill-grid">
+                            <li class="skill-item"><span class="si-cat">linguagem</span><span class="si-name">PHP</span></li>
+                            <li class="skill-item"><span class="si-cat">framework</span><span class="si-name">Laravel</span></li>
+                            <li class="skill-item"><span class="si-cat">linguagem</span><span class="si-name">C#</span></li>
+                            <li class="skill-item"><span class="si-cat">linguagem</span><span class="si-name">C</span></li>
+                        </ul>
+                    </div>
+                    <div class="ss-panel-inner" id="panel-mobile" role="tabpanel" aria-labelledby="tab-mobile" tabindex="0" hidden>
+                    <h3 class="ss-panel-title">Mobile</h3>
+                        <ul class="skill-grid">
+                            <li class="skill-item"><span class="si-cat">nativo</span><span class="si-name">Java</span></li>
+                            <li class="skill-item"><span class="si-cat">ide</span><span class="si-name">Android Studio</span></li>
+                            <li class="skill-item"><span class="si-cat">framework</span><span class="si-name">Flutter</span></li>
+                            <li class="skill-item"><span class="si-cat">framework</span><span class="si-name">Ionic</span></li>
+                        </ul>
+                    </div>
+                    <div class="ss-panel-inner" id="panel-database" role="tabpanel" aria-labelledby="tab-database" tabindex="0" hidden>
+                    <h3 class="ss-panel-title">Banco de Dados</h3>
+                        <ul class="skill-grid">
+                            <li class="skill-item"><span class="si-cat">sgbd</span><span class="si-name">MySQL</span></li>
+                            <li class="skill-item"><span class="si-cat">linguagem</span><span class="si-name">SQL Script</span></li>
+                            <li class="skill-item"><span class="si-cat">modelagem</span><span class="si-name">Diagrama ER</span></li>
+                        </ul>
+                    </div>
+                    <div class="ss-panel-inner" id="panel-design" role="tabpanel" aria-labelledby="tab-design" tabindex="0" hidden>
+                    <h3 class="ss-panel-title">Design & Arte</h3>
+                        <ul class="skill-grid">
+                            <li class="skill-item"><span class="si-cat">ux/ui</span><span class="si-name">Figma</span></li>
+                            <li class="skill-item"><span class="si-cat">edição</span><span class="si-name">Photoshop</span></li>
+                            <li class="skill-item"><span class="si-cat">vetorial</span><span class="si-name">CorelDraw</span></li>
+                            <li class="skill-item"><span class="si-cat">pixel art</span><span class="si-name">Aseprite</span></li>
+                        </ul>
+                    </div>
+                    <div class="ss-panel-inner" id="panel-game" role="tabpanel" aria-labelledby="tab-game" tabindex="0" hidden>
+                    <h3 class="ss-panel-title">Game Dev</h3>
+                        <ul class="skill-grid">
+                            <li class="skill-item"><span class="si-cat">engine</span><span class="si-name">Godot Engine</span></li>
+                            <li class="skill-item"><span class="si-cat">arte</span><span class="si-name">Pixel Art</span></li>
+                        </ul>
+                    </div>
+                    <div class="ss-panel-inner" id="panel-qa" role="tabpanel" aria-labelledby="tab-qa" tabindex="0" hidden>
+                    <h3 class="ss-panel-title">QA & Análise</h3>
+                        <ul class="skill-grid">
+                            <li class="skill-item"><span class="si-cat">testes</span><span class="si-name">QA & Testes</span></li>
+                            <li class="skill-item"><span class="si-cat">engenharia</span><span class="si-name">Req. Analysis</span></li>
+                            <li class="skill-item"><span class="si-cat">ux</span><span class="si-name">Prototipagem</span></li>
+                            <li class="skill-item"><span class="si-cat">metodologia</span><span class="si-name">Agile / Scrum</span></li>
+                            <li class="skill-item"><span class="si-cat">versionamento</span><span class="si-name">Git / GitHub</span></li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- SEÇÃO PROJETOS -->
+            <section class="sec" id="projetos" aria-label="Projetos">
+            <div class="sec-head">
+                <div class="sec-head-bar" aria-hidden="true"></div>
+                <h2 class="sec-head-title">projetos</h2>
+                <span class="sec-head-sub">save files</span>
+            </div>
+
+            <div class="proj-slots">
+
+                <!-- PROJETO 001 — Blog de Anime -->
+                <div class="slot" role="button" tabindex="0" aria-label="Ver detalhes do projeto: Blog de Anime" onclick="openModal('blog')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('blog');}">
+                <div class="slot-preview">
+                    <svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração estilo wireframe de um blog chamado Anime World, com três cards de postagens em destaque"><rect width="900" height="240" fill="#1e1519"/>
+                    <!-- grade pixel art -->
+                    <rect x="0" y="0" width="900" height="240" fill="none"/>
+                    <line x1="0" y1="0" x2="900" y2="0" stroke="rgba(119,81,98,0.06)" stroke-width="1"/>
+                    <!-- screen mockup -->
+                    <rect x="80" y="20" width="740" height="200" fill="none" stroke="rgba(119,81,98,0.2)" stroke-width="1.5"/>
+                    <rect x="80" y="20" width="740" height="26" fill="rgba(119,81,98,0.07)"/>
+                    <circle cx="98" cy="33" r="4" fill="rgba(220,80,80,0.5)"/>
+                    <circle cx="114" cy="33" r="4" fill="rgba(220,180,50,0.5)"/>
+                    <circle cx="130" cy="33" r="4" fill="rgba(60,200,90,0.5)"/>
+                    <rect x="200" y="28" width="310" height="10" rx="0" fill="rgba(119,81,98,0.15)"/>
+                    <text x="355" y="37" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(119,81,98,0.6)">rossinoli-anime.blogspot.com</text>
+                    <!-- header area -->
+                    <rect x="80" y="46" width="740" height="42" fill="rgba(119,81,98,0.1)"/>
+                    <text x="450" y="72" text-anchor="middle" font-family="DM Serif Display,serif" font-size="18" fill="rgba(252,244,253,0.85)" font-style="italic">✦ Anime World ✦</text>
+                    <!-- cards -->
+                    <rect x="88" y="96" width="226" height="116" fill="rgba(119,81,98,0.06)" stroke="rgba(119,81,98,0.15)" stroke-width="1"/>
+                    <rect x="92" y="100" width="218" height="55" fill="rgba(119,81,98,0.1)"/>
+                    <rect x="96" y="163" width="120" height="7" fill="rgba(119,81,98,0.3)"/>
+                    <rect x="96" y="177" width="80" height="6" fill="rgba(119,81,98,0.18)"/>
+                    <rect x="330" y="96" width="226" height="116" fill="rgba(119,81,98,0.06)" stroke="rgba(119,81,98,0.15)" stroke-width="1"/>
+                    <rect x="334" y="100" width="218" height="55" fill="rgba(119,81,98,0.1)"/>
+                    <rect x="338" y="163" width="140" height="7" fill="rgba(119,81,98,0.3)"/>
+                    <rect x="338" y="177" width="90" height="6" fill="rgba(119,81,98,0.18)"/>
+                    <rect x="572" y="96" width="240" height="116" fill="rgba(119,81,98,0.06)" stroke="rgba(119,81,98,0.15)" stroke-width="1"/>
+                    <rect x="576" y="100" width="232" height="55" fill="rgba(119,81,98,0.1)"/>
+                    <rect x="580" y="163" width="110" height="7" fill="rgba(119,81,98,0.3)"/>
+                    <rect x="580" y="177" width="75" height="6" fill="rgba(119,81,98,0.18)"/>
+                    </svg>
+                    <div class="slot-preview-overlay" aria-hidden="true"></div>
+                </div>
+                <div class="slot-body">
+                    <div class="slot-num">001</div>
+                    <span class="slot-badge">destaque · conteúdo</span>
+                    <h3 class="slot-title">Blog de Anime</h3>
+                    <p class="slot-desc">Blog editorial no Google Blogger com resenhas, listas e artigos sobre animes — o primeiro projeto web, antes mesmo da programação.</p>
+                    <div class="slot-tags"><span class="slot-tag">Google Blogger</span><span class="slot-tag">Conteúdo Web</span><span class="slot-tag">Anime</span><span class="slot-tag">Editorial</span></div>
+                    <div class="slot-footer">
+                    <button class="btn-s" onclick="event.stopPropagation();openModal('blog')">ver mais</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- PROJETO 002 — Librando e Aprendendo (jogo de Libras) -->
+                <div class="slot" role="button" tabindex="0" aria-label="Ver detalhes do projeto: Librando e Aprendendo" onclick="openModal('librando')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('librando');}">
+                <div class="slot-preview">
+                    <svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de uma mão fazendo um sinal em Libras, em estilo pixel art"><rect width="400" height="180" fill="#1e1519"/>
+                    <circle cx="200" cy="90" r="100" fill="none" stroke="rgba(119,81,98,0.09)" stroke-width="36"/>
+                    <circle cx="200" cy="90" r="40" fill="rgba(119,81,98,0.18)"/>
+                    <!-- mão em libras pixel style -->
+                    <rect x="182" y="60" width="9" height="38" fill="#775162"/>
+                    <rect x="196" y="53" width="9" height="45" fill="#9a6a7e"/>
+                    <rect x="210" y="57" width="9" height="41" fill="#775162"/>
+                    <rect x="224" y="65" width="9" height="33" fill="#9a6a7e" opacity="0.7"/>
+                    <text x="200" y="162" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(119,81,98,0.4)" letter-spacing="3">LIBRAS · INCLUSÃO · JS</text>
+                    </svg>
+                    <div class="slot-preview-overlay" aria-hidden="true"></div>
+                </div>
+                <div class="slot-body">
+                    <div class="slot-num">002</div>
+                    <h3 class="slot-title">Librando e Aprendendo</h3>
+                    <p class="slot-desc">Jogo educativo interativo para aprender Libras — tecnologia a serviço da inclusão.</p>
+                    <div class="slot-tags"><span class="slot-tag">HTML</span><span class="slot-tag">CSS</span><span class="slot-tag">JavaScript</span><span class="slot-tag">Inclusão</span></div>
+                    <div class="slot-footer">
+                    <button class="btn-s" onclick="event.stopPropagation();openModal('librando')">ver mais</button>
+                    <a class="btn-gh" href="https://github.com/rossinoli/Librando-e-aprendendo" target="_blank" onclick="event.stopPropagation()">GitHub <span aria-hidden="true">→</span><span class="sr-only"> (abre em nova aba)</span></a>
+                    </div>
+                </div>
+                </div>
+
+                <!-- PROJETO 003 — Portfólio Digital-->
+                <div class="slot" role="button" tabindex="0" aria-label="Ver detalhes do projeto: Portfólio Digital" onclick="openModal('portfolio')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('portfolio');}">
+                <div class="slot-preview">
+                    <svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Padrão de blocos coloridos em estilo pixel art, formando duas composições simétricas"><rect width="400" height="180" fill="#1e1519"/>
+                    <!-- pixel art grid pattern -->
+                    <g opacity="0.9">
+                    <rect x="146" y="44" width="14" height="14" fill="#775162"/>
+                    <rect x="160" y="44" width="14" height="14" fill="#9a6a7e"/>
+                    <rect x="174" y="44" width="14" height="14" fill="#775162"/>
+                    <rect x="188" y="44" width="14" height="14" fill="#5a4050"/>
+                    <rect x="132" y="58" width="14" height="14" fill="#5a4050"/>
+                    <rect x="146" y="58" width="14" height="14" fill="#9a6a7e"/>
+                    <rect x="160" y="58" width="14" height="14" fill="#84a5b2"/>
+                    <rect x="174" y="58" width="14" height="14" fill="#9a6a7e"/>
+                    <rect x="188" y="58" width="14" height="14" fill="#84a5b2"/>
+                    <rect x="202" y="58" width="14" height="14" fill="#5a4050"/>
+                    <rect x="132" y="72" width="14" height="14" fill="#775162"/>
+                    <rect x="146" y="72" width="14" height="14" fill="#84a5b2"/>
+                    <rect x="160" y="72" width="14" height="14" fill="#fcf4fd" opacity="0.4"/>
+                    <rect x="174" y="72" width="14" height="14" fill="#84a5b2"/>
+                    <rect x="188" y="72" width="14" height="14" fill="#775162"/>
+                    <rect x="146" y="86" width="14" height="14" fill="#9a6a7e"/>
+                    <rect x="160" y="86" width="14" height="14" fill="#775162"/>
+                    <rect x="174" y="86" width="14" height="14" fill="#9a6a7e"/>
+                    <rect x="160" y="100" width="14" height="14" fill="#5a4050"/>
+                    <!-- mirror/contrast side -->
+                    <rect x="236" y="44" width="14" height="14" fill="#5a4050"/>
+                    <rect x="250" y="44" width="14" height="14" fill="#775162"/>
+                    <rect x="264" y="44" width="14" height="14" fill="#9a6a7e"/>
+                    <rect x="278" y="44" width="14" height="14" fill="#775162"/>
+                    <rect x="236" y="58" width="14" height="14" fill="#84a5b2"/>
+                    <rect x="250" y="58" width="14" height="14" fill="#5a4050"/>
+                    <rect x="264" y="58" width="14" height="14" fill="#9a6a7e"/>
+                    <rect x="278" y="58" width="14" height="14" fill="#84a5b2"/>
+                    <rect x="236" y="72" width="14" height="14" fill="#775162"/>
+                    <rect x="250" y="72" width="14" height="14" fill="#fcf4fd" opacity="0.3"/>
+                    <rect x="264" y="72" width="14" height="14" fill="#775162"/>
+                    </g>
+                    <text x="200" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(119,81,98,0.4)" letter-spacing="3">HTML · CSS · BOOTSTRAP · PIXEL ART</text>
+                    </svg>
+                    <div class="slot-preview-overlay" aria-hidden="true"></div>
+                </div>
+                <div class="slot-body">
+                    <div class="slot-num">003</div>
+                    <h3 class="slot-title">Portfólio Digital</h3>
+                    <p class="slot-desc">HTML, CSS e Bootstrap com pixel art criada à mão no Aseprite como identidade visual única.</p>
+                    <div class="slot-tags"><span class="slot-tag">HTML</span><span class="slot-tag">CSS</span><span class="slot-tag">Bootstrap</span><span class="slot-tag">Pixel Art</span></div>
+                    <div class="slot-footer">
+                    <button class="btn-s" onclick="event.stopPropagation();openModal('portfolio')">ver mais</button>
+                    <a class="btn-gh" href="https://github.com/rossinoli/portfolio" target="_blank" onclick="event.stopPropagation()">GitHub <span aria-hidden="true">→</span><span class="sr-only"> (abre em nova aba)</span></a>
+                    </div>
+                </div>
+                </div>
+
+                <!-- PROJETO 004 — apostadorFalido (modelagem de banco de dados para cassino) -->
+                <div class="slot" role="button" tabindex="0" aria-label="Ver detalhes do projeto: apostadorFalido, Banco de Dados" onclick="openModal('cassino')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('cassino');}">
+                <div class="slot-preview">
+                    <svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Diagrama entidade-relacionamento com três tabelas conectadas: usuários, apostas e jogos"><rect width="400" height="180" fill="#1e1519"/>
+                    <!-- er diagram style -->
+                    <rect x="50" y="40" width="120" height="60" fill="none" stroke="rgba(119,81,98,0.45)" stroke-width="1.5"/>
+                    <rect x="50" y="40" width="120" height="18" fill="rgba(119,81,98,0.1)"/>
+                    <text x="110" y="53" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(154,106,126,0.85)">usuarios</text>
+                    <rect x="60" y="66" width="70" height="6" fill="rgba(119,81,98,0.2)"/>
+                    <rect x="60" y="76" width="55" height="6" fill="rgba(119,81,98,0.15)"/>
+                    <rect x="230" y="24" width="120" height="60" fill="none" stroke="rgba(132,165,178,0.4)" stroke-width="1.5"/>
+                    <rect x="230" y="24" width="120" height="18" fill="rgba(132,165,178,0.07)"/>
+                    <text x="290" y="37" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(132,165,178,0.85)">apostas</text>
+                    <rect x="240" y="50" width="80" height="6" fill="rgba(132,165,178,0.15)"/>
+                    <rect x="240" y="60" width="60" height="6" fill="rgba(132,165,178,0.1)"/>
+                    <rect x="148" y="110" width="104" height="52" fill="none" stroke="rgba(119,81,98,0.45)" stroke-width="1.5"/>
+                    <rect x="148" y="110" width="104" height="18" fill="rgba(119,81,98,0.1)"/>
+                    <text x="200" y="123" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(154,106,126,0.85)">jogos</text>
+                    <line x1="170" y1="100" x2="185" y2="112" stroke="rgba(119,81,98,0.25)" stroke-width="1" stroke-dasharray="4,3"/>
+                    <line x1="230" y1="84" x2="215" y2="112" stroke="rgba(132,165,178,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+                    <text x="200" y="170" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(119,81,98,0.35)" letter-spacing="2">MYSQL · SQL · MODELAGEM ER</text>
+                    </svg>
+                    <div class="slot-preview-overlay" aria-hidden="true"></div>
+                </div>
+                <div class="slot-body">
+                    <div class="slot-num">004</div>
+                    <h3 class="slot-title">apostadorFalido — Banco de Dados</h3>
+                    <p class="slot-desc">Modelagem relacional completa para sistema de cassino — diagramas ER e scripts SQL avançados.</p>
+                    <div class="slot-tags"><span class="slot-tag">MySQL</span><span class="slot-tag">SQL</span><span class="slot-tag">Modelagem ER</span></div>
+                    <div class="slot-footer">
+                    <button class="btn-s" onclick="event.stopPropagation();openModal('cassino')">ver mais</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- PROJETO 005 — Prototipagem UX/UI (Ciranda, no Figma) -->
+                <div class="slot" role="button" tabindex="0" aria-label="Ver detalhes do projeto: Prototipagem UX/UI, Ciranda" onclick="openModal('figma')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('figma');}">
+                <div class="slot-preview">
+                    <svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Mockup de tela do Figma com barra lateral de navegação, área de conteúdo principal e elemento circular de destaque"><rect width="400" height="180" fill="#1e1519"/>
+                    <rect x="55" y="22" width="290" height="138" fill="none" stroke="rgba(119,81,98,0.2)" stroke-width="1.5"/>
+                    <rect x="55" y="22" width="290" height="24" fill="rgba(119,81,98,0.07)"/>
+                    <rect x="68" y="30" width="32" height="8" fill="rgba(119,81,98,0.4)"/>
+                    <text x="152" y="38" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(119,81,98,0.5)">ciranda.figma</text>
+                    <!-- sidebar -->
+                    <rect x="55" y="46" width="52" height="114" fill="rgba(119,81,98,0.04)" stroke="rgba(119,81,98,0.12)" stroke-width="1"/>
+                    <rect x="61" y="54" width="40" height="8" fill="rgba(119,81,98,0.2)"/>
+                    <rect x="61" y="67" width="40" height="8" fill="rgba(119,81,98,0.12)"/>
+                    <rect x="61" y="80" width="40" height="8" fill="rgba(119,81,98,0.12)"/>
+                    <!-- main area -->
+                    <rect x="115" y="56" width="140" height="75" fill="rgba(119,81,98,0.06)" stroke="rgba(119,81,98,0.18)" stroke-width="1"/>
+                    <rect x="123" y="66" width="80" height="9" fill="rgba(119,81,98,0.3)"/>
+                    <rect x="123" y="98" width="58" height="14" fill="rgba(119,81,98,0.4)"/>
+                    <circle cx="310" cy="85" r="28" fill="rgba(132,165,178,0.08)" stroke="rgba(132,165,178,0.2)" stroke-width="1"/>
+                    <text x="200" y="162" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(119,81,98,0.35)" letter-spacing="2">FIGMA · UX/UI · PROTÓTIPO</text>
+                    </svg>
+                    <div class="slot-preview-overlay" aria-hidden="true"></div>
+                </div>
+                <div class="slot-body">
+                    <div class="slot-num">005</div>
+                    <h3 class="slot-title">Prototipagem UX/UI — Ciranda</h3>
+                    <p class="slot-desc">Protótipo de alta fidelidade no Figma com foco em usabilidade e arquitetura de informação.</p>
+                    <div class="slot-tags"><span class="slot-tag">Figma</span><span class="slot-tag">UX/UI</span><span class="slot-tag">Protótipo</span></div>
+                    <div class="slot-footer">
+                    <button class="btn-s" onclick="event.stopPropagation();openModal('figma')">ver mais</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- PROJETO 006 — Jogo Educativo Mobile (Java + Android Studio) -->
+                <div class="slot" role="button" tabindex="0" aria-label="Ver detalhes do projeto: Jogo Educativo Mobile" onclick="openModal('mobile')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('mobile');}">
+                <div class="slot-preview">
+                    <svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Mockup de um smartphone exibindo uma tela de aplicativo Java com botões de navegação"><rect width="400" height="180" fill="#1e1519"/>
+                    <!-- phone frame pixel style -->
+                    <rect x="158" y="14" width="84" height="152" fill="none" stroke="rgba(119,81,98,0.5)" stroke-width="2"/>
+                    <rect x="164" y="26" width="72" height="128" fill="rgba(119,81,98,0.04)"/>
+                    <rect x="182" y="18" width="36" height="6" fill="rgba(119,81,98,0.22)"/>
+                    <!-- app screen -->
+                    <rect x="168" y="30" width="64" height="38" fill="rgba(119,81,98,0.1)"/>
+                    <text x="200" y="53" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(154,106,126,0.6)">JAVA</text>
+                    <!-- buttons -->
+                    <rect x="170" y="76" width="28" height="22" fill="rgba(119,81,98,0.14)" stroke="rgba(119,81,98,0.3)" stroke-width="1"/>
+                    <rect x="202" y="76" width="28" height="22" fill="rgba(119,81,98,0.14)" stroke="rgba(119,81,98,0.3)" stroke-width="1"/>
+                    <rect x="170" y="102" width="28" height="22" fill="rgba(119,81,98,0.14)" stroke="rgba(119,81,98,0.3)" stroke-width="1"/>
+                    <rect x="202" y="102" width="28" height="22" fill="rgba(132,165,178,0.18)" stroke="rgba(132,165,178,0.35)" stroke-width="1"/>
+                    <text x="105" y="96" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="22" fill="rgba(119,81,98,0.1)" font-weight="700">java</text>
+                    <text x="200" y="168" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(119,81,98,0.35)" letter-spacing="2">JAVA · ANDROID STUDIO · MOBILE</text>
+                    </svg>
+                    <div class="slot-preview-overlay" aria-hidden="true"></div>
+                </div>
+                <div class="slot-body">
+                    <div class="slot-num">006</div>
+                    <h3 class="slot-title">Jogo Educativo Mobile</h3>
+                    <p class="slot-desc">Java nativo com Android Studio — animação e transição como ferramentas pedagógicas reais.</p>
+                    <div class="slot-tags"><span class="slot-tag">Java</span><span class="slot-tag">Android Studio</span><span class="slot-tag">Mobile</span></div>
+                    <div class="slot-footer">
+                    <button class="btn-s" onclick="event.stopPropagation();openModal('mobile')">ver mais</button>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+            </section>
+
+            <!-- SEÇÃO FRASES FAVORITAS -->
+            <section id="quotes" aria-label="Frases favoritas">
+            <div class="sec-head">
+                <div class="sec-head-bar" aria-hidden="true"></div>
+                <h2 class="sec-head-title">frases favoritas</h2>
+                <span class="sec-head-sub">dialog log</span>
+            </div>
+
+            <!-- aria-live="polite" -->
+            <div class="dialog-box" role="region" aria-label="Citação em destaque" aria-roledescription="carrossel de frases">
+                <div class="dialog-header" aria-hidden="true">✦ DIALOG BOX ✦</div>
+                <blockquote class="dialog-text" id="dText" aria-live="polite"></blockquote>
+                <div class="dialog-meta">
+                <div>
+                    <div class="dialog-char" id="dChar"></div>
+                    <div class="dialog-source" id="dSource"></div>
+                </div>
+                <div class="dialog-type" id="dType"></div>
+                <div class="dialog-nav">
+                    <button class="d-btn" id="dPrev" aria-label="Frase anterior">←</button>
+                    <!-- bolinhas de navegação -->
+                    <div class="d-dots" id="dDots" role="tablist" aria-label="Selecionar frase"></div>
+                    <button class="d-btn" id="dNext" aria-label="Próxima frase">→</button>
+                </div>
+                </div>
+            </div>
+            <p class="press-continue">Use as setas do teclado ou os botões ← → para navegar entre as frases</p>
+            </section>
+
+            <!-- SEÇÃO CONTATO -->
+            <section id="contato" aria-label="Contato">
+            <div class="sec-head">
+                <div class="sec-head-bar" aria-hidden="true"></div>
+                <h2 class="sec-head-title">contato</h2>
+                <span class="sec-head-sub">new game +</span>
+            </div>
+            <div class="contato-layout">
+                <div class="contato-left">
+                <div class="cl-top">início de conversa</div>
+                <h3 class="contato-headline">
+                    vamos<br>
+                    <span class="hi">trabalhar</span><br>
+                    juntos?
+                </h3>
+                <div class="contato-div" aria-hidden="true"></div>
+                <p class="contato-sub">Disponível para novos desafios em desenvolvimento e análise de sistemas. Se você busca uma profissional para transformar requisitos em soluções reais, vamos conversar.</p>
+
+                <a href="Email:" class="btn-p">enviar mensagem</a>
+                </div>
+                <!-- cards de redes sociais/contato -->
+                <div class="contato-right">
+                <a href="https://github.com/rossinoli" class="c-card" target="_blank" aria-label="GitHub: github.com/rossinoli (abre em nova aba)">
+                    <div class="c-icon-wrap" aria-hidden="true">GH</div>
+                    <div class="c-info"><div class="c-name">GitHub</div><div class="c-handle">github.com/rossinoli</div></div>
+                    <div class="c-arrow" aria-hidden="true">→</div>
+                </a>
+                <a href="https://instagram.com/thai_rossinoli" class="c-card" target="_blank" aria-label="Instagram: @thai_rossinoli (abre em nova aba)">
+                    <div class="c-icon-wrap" aria-hidden="true">IG</div>
+                    <div class="c-info"><div class="c-name">Instagram</div><div class="c-handle">@thai_rossinoli</div></div>
+                    <div class="c-arrow" aria-hidden="true">→</div>
+                </a>
+                <a href="mailto:" class="c-card" aria-label="Enviar e-mail">
+                    <div class="c-icon-wrap" aria-hidden="true">✉</div>
+                    <div class="c-info"><div class="c-name">E-mail</div><div class="c-handle">enviar mensagem</div></div>
+                    <div class="c-arrow" aria-hidden="true">→</div>
+                </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="f-left">© 2025 thaina_rossinoli — todos os direitos reservados</div>
+        <div class="f-right"><a href="https://www.fateclins.edu.br/web/" target="_blank" rel="noopener noreferrer"><img src="fatec.png" alt="Logo Thainá" class="footer-logo"></a>
 </div>
-</nav>
+    </footer>
 
-<!-- HERO -->
-<section class="hero" id="inicio">
-<canvas id="pixelCanvas"></canvas>
-<div class="hero-orb"></div><div class="hero-orb2"></div>
-<div style="position:relative;">
-    <div class="status-pill"><span class="status-dot"></span>disponível para oportunidades</div>
-    <div class="hero-eyebrow">fullstack developer &amp; requirements analyst</div>
-    <h1 class="hero-name">THAINA<br><span class="dim">ROSSI</span><span class="acc">NOLI</span></h1>
-    <p class="hero-sub">java mobile • front-end • análise de sistemas</p>
-    <p class="hero-bio">Soluções <em>Mobile e Front-end</em> com rigor técnico. Desenvolvedora com foco em <em>Java</em>, modelagem de dados e arquitetura de software testável.</p>
-    <div class="hero-actions">
-    <a href="#projetos" class="btn-p">ver projetos</a>
-    <a href="#" class="btn-o">Curriculo</a>
+    <!-- MODAL DE DETALHES DO PROJETO -->
+<div class="modal-bg" id="modalBg" onclick="closeModal(event)">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fechar detalhes do projeto">fechar ✕</button>
+    <div class="modal-preview" id="mPreview"></div>
+    <div class="modal-inner">
+      <div class="modal-badge" id="mBadge"></div>
+      <h2 class="modal-title" id="mTitle"></h2>
+      <p class="modal-desc" id="mDesc"></p>
+      <h3 class="modal-sec-label">tecnologias</h3>
+      <div class="modal-tags" id="mTags"></div>
+      <h3 class="modal-sec-label">detalhes</h3>
+      <div class="modal-details" id="mDetails"></div>
+      <div class="modal-actions" id="mActions"></div>
     </div>
+  </div>
 </div>
-</section>
-
-<!-- TICKER -->
-<div class="ticker">
-<div class="ticker-track">
-    <span class="d-item">html</span><span class="d-sep">/</span><span class="d-item">css</span><span class="d-sep">/</span><span class="d-item">javascript</span><span class="d-sep">/</span><span class="d-item">php</span><span class="d-sep">/</span><span class="d-item">laravel</span><span class="d-sep">/</span><span class="d-item">mysql</span><span class="d-sep">/</span><span class="d-item">java</span><span class="d-sep">/</span><span class="d-item">android studio</span><span class="d-sep">/</span><span class="d-item">requirements analysis</span><span class="d-sep">/</span><span class="d-item">software quality</span><span class="d-sep">/</span><span class="d-item">figma</span><span class="d-sep">/</span><span class="d-item">photoshop</span><span class="d-sep">/</span><span class="d-item">coreldraw</span><span class="d-sep">/</span><span class="d-item">aseprite</span><span class="d-sep">/</span><span class="d-item">pixel art</span><span class="d-sep">/</span><span class="d-item">godot engine</span><span class="d-sep">/</span><span class="d-item">git</span><span class="d-sep">/</span>
-    <span class="d-item">html</span><span class="d-sep">/</span><span class="d-item">css</span><span class="d-sep">/</span><span class="d-item">javascript</span><span class="d-sep">/</span><span class="d-item">php</span><span class="d-sep">/</span><span class="d-item">laravel</span><span class="d-sep">/</span><span class="d-item">mysql</span><span class="d-sep">/</span><span class="d-item">java</span><span class="d-sep">/</span><span class="d-item">android studio</span><span class="d-sep">/</span><span class="d-item">requirements analysis</span><span class="d-sep">/</span><span class="d-item">software quality</span><span class="d-sep">/</span><span class="d-item">figma</span><span class="d-sep">/</span><span class="d-item">photoshop</span><span class="d-sep">/</span><span class="d-item">coreldraw</span><span class="d-sep">/</span><span class="d-item">aseprite</span><span class="d-sep">/</span><span class="d-item">pixel art</span><span class="d-sep">/</span><span class="d-item">godot engine</span><span class="d-sep">/</span><span class="d-item">git</span><span class="d-sep">/</span>
-</div>
-</div>
-
-<!-- SOBRE -->
-<section class="sec" id="sobre">
-<div class="sec-label">sobre mim</div>
-<div class="sobre-layout">
-<div class="sobre-text">
-    <p>Sou a <em>Thaina Rossinoli</em>. Sou desenvolvedora focada em <em>Mobile Nativo (Java)</em> e <em>Front-end</em>, apaixonada por entender a lógica dos sistemas — do bit ao pixel. No meu tempo livre, o que eu mais gosto é de jogar e me desafiar criando meus próprios games.</p>
-    <p>Minha atuação une o desenvolvimento técnico à organização da <em>Análise de Requisitos</em> e estrutura de <em>Bancos de Dados</em>. Tenho facilidade em transformar ideias em estruturas sólidas, sempre com atenção total aos detalhes.</p>
-    <p>Aplico meu lado perfeccionista no estudo constante de <em>QA</em> — porque código de qualidade é aquele que pode ser testado, mantido e que resolve problemas reais.</p>
-    <p>Atualmente, busco oportunidades em <em>Mobile, Front-end ou Análise de Requisitos</em>, seja em regime <em>CLT ou Freela</em>.</p>
-</div>
-    <div class="sobre-metrics">
-    <div class="metric"><div class="metric-val">25+</div><div class="metric-label">projetos<br>entregues</div></div>
-    <div class="metric"><div class="metric-val">14+</div><div class="metric-label">linguagens<br>& frameworks</div></div>
-    <div class="metric"><div class="metric-val">full</div><div class="metric-label">cobertura<br>de conhecimento</div></div>
-    <!--<div class="metric"><div class="metric-val">qa</div><div class="metric-label">mindset de<br>qualidade</div></div>-->
-    </div>
-</div>
-</section>
-
-<!-- STACK -->
-<section class="sec sec-bg" id="conhecimento">
-<div class="sec-label">tecnologias</div>
-<div class="editor-wrap">
-
-    <!-- titlebar -->
-    <div class="editor-titlebar">
-    <div class="editor-dot r"></div>
-    <div class="editor-dot y"></div>
-    <div class="editor-dot g"></div>
-    <span class="editor-filename">skills.js — thaina_rossinoli</span>
-    </div>
-
-    <div class="editor-body">
-
-    <!-- front-end -->
-    <div class="code-line"><div class="line-num">01</div><div class="line-content"><span class="kw">const </span><span class="fn">frontend</span><span class="br"> = [</span><span class="cm">&nbsp;// HTML · CSS · JS · frameworks</span></div></div>
-    <div class="cells-line"><div class="line-num" style="font-size:9px;padding-top:0.65rem;">↳</div><div class="cells-row"><div class="s-cell"><div class="s-cell-sub">linguagem</div><div class="s-cell-name">HTML5</div></div><div class="s-cell"><div class="s-cell-sub">linguagem</div><div class="s-cell-name">CSS3</div></div><div class="s-cell"><div class="s-cell-sub">linguagem</div><div class="s-cell-name">JavaScript</div></div><div class="s-cell"><div class="s-cell-sub">framework</div><div class="s-cell-name">Bootstrap</div></div><div class="s-cell"><div class="s-cell-sub">framework</div><div class="s-cell-name">Materialize</div></div></div></div>
-    <div class="code-line"><div class="line-num">02</div><div class="line-content"><span class="br">]</span></div></div>
-
-    <div class="code-spacer"></div>
-
-    <!-- back-end -->
-    <div class="code-line"><div class="line-num">03</div><div class="line-content"><span class="kw">const </span><span class="fn">backend</span><span class="br"> = [</span><span class="cm">&nbsp;// PHP · C# · C · Laravel</span></div></div>
-    <div class="cells-line"><div class="line-num" style="font-size:9px;padding-top:0.65rem;">↳</div><div class="cells-row"><div class="s-cell"><div class="s-cell-sub">linguagem</div><div class="s-cell-name">PHP</div></div><div class="s-cell"><div class="s-cell-sub">framework</div><div class="s-cell-name">Laravel</div></div><div class="s-cell"><div class="s-cell-sub">linguagem</div><div class="s-cell-name">C#</div></div><div class="s-cell"><div class="s-cell-sub">linguagem</div><div class="s-cell-name">C</div></div></div></div>
-    <div class="code-line"><div class="line-num">04</div><div class="line-content"><span class="br">]</span></div></div>
-
-    <div class="code-spacer"></div>
-
-    <!-- mobile -->
-    <div class="code-line"><div class="line-num">05</div><div class="line-content"><span class="kw">const </span><span class="fn">mobile</span><span class="br"> = [</span><span class="cm">&nbsp;// Java nativo · Flutter · Ionic</span></div></div>
-    <div class="cells-line"><div class="line-num" style="font-size:9px;padding-top:0.65rem;">↳</div><div class="cells-row"><div class="s-cell"><div class="s-cell-sub">nativo</div><div class="s-cell-name">Java</div></div><div class="s-cell"><div class="s-cell-sub">nativo</div><div class="s-cell-name">Android Studio</div></div><div class="s-cell"><div class="s-cell-sub">framework</div><div class="s-cell-name">Flutter</div></div><div class="s-cell"><div class="s-cell-sub">framework</div><div class="s-cell-name">Ionic</div></div></div></div>
-    <div class="code-line"><div class="line-num">06</div><div class="line-content"><span class="br">]</span></div></div>
-
-    <div class="code-spacer"></div>
-
-    <!-- database -->
-    <div class="code-line"><div class="line-num">07</div><div class="line-content"><span class="kw">const </span><span class="fn">database</span><span class="br"> = [</span><span class="cm">&nbsp;// MySQL · SQL Script</span></div></div>
-    <div class="cells-line"><div class="line-num" style="font-size:9px;padding-top:0.65rem;">↳</div><div class="cells-row"><div class="s-cell"><div class="s-cell-sub">sgbd</div><div class="s-cell-name">MySQL</div></div><div class="s-cell"><div class="s-cell-sub">linguagem</div><div class="s-cell-name">SQL Script</div></div></div></div>
-    <div class="code-line"><div class="line-num">08</div><div class="line-content"><span class="br">]</span></div></div>
-
-    <div class="code-spacer"></div>
-
-    <!-- design & art -->
-    <div class="code-line"><div class="line-num">09</div><div class="line-content"><span class="kw">const </span><span class="fn">designAndArt</span><span class="br"> = [</span><span class="cm">&nbsp;// Figma · Photoshop · Pixel Art</span></div></div>
-    <div class="cells-line"><div class="line-num" style="font-size:9px;padding-top:0.65rem;">↳</div><div class="cells-row"><div class="s-cell"><div class="s-cell-sub">ux/ui</div><div class="s-cell-name">Figma</div></div><div class="s-cell"><div class="s-cell-sub">edição</div><div class="s-cell-name">Photoshop</div></div><div class="s-cell"><div class="s-cell-sub">vetorial</div><div class="s-cell-name">CorelDraw</div></div><div class="s-cell"><div class="s-cell-sub">pixel art</div><div class="s-cell-name">Aseprite</div></div><div class="s-cell"><div class="s-cell-sub">estilo</div><div class="s-cell-name">Pixel Art</div></div></div></div>
-    <div class="code-line"><div class="line-num">10</div><div class="line-content"><span class="br">]</span></div></div>
-
-    <div class="code-spacer"></div>
-
-    <!-- gamedev -->
-    <div class="code-line"><div class="line-num">11</div><div class="line-content"><span class="kw">const </span><span class="fn">gameDev</span><span class="br"> = [</span><span class="cm">&nbsp;// engine</span></div></div>
-    <div class="cells-line"><div class="line-num" style="font-size:9px;padding-top:0.65rem;">↳</div><div class="cells-row"><div class="s-cell"><div class="s-cell-sub">engine</div><div class="s-cell-name">Godot Engine</div></div></div></div>
-    <div class="code-line"><div class="line-num">12</div><div class="line-content"><span class="br">]</span></div></div>
-
-    <div class="code-spacer"></div>
-
-    <!-- quality -->
-    <div class="code-line"><div class="line-num">13</div><div class="line-content"><span class="kw">const </span><span class="fn">qualityAndAnalysis</span><span class="br"> = [</span><span class="cm">&nbsp;// QA · Requisitos · UX</span></div></div>
-    <div class="cells-line"><div class="line-num" style="font-size:9px;padding-top:0.65rem;">↳</div><div class="cells-row"><div class="s-cell"><div class="s-cell-sub">testes</div><div class="s-cell-name">QA & Testes</div></div><div class="s-cell"><div class="s-cell-sub">engenharia</div><div class="s-cell-name">Req. Analysis</div></div><div class="s-cell"><div class="s-cell-sub">ux</div><div class="s-cell-name">Prototipagem</div></div><div class="s-cell"><div class="s-cell-sub">ux</div><div class="s-cell-name">Usabilidade</div></div></div></div>
-    <div class="code-line"><div class="line-num">14</div><div class="line-content"><span class="br">]</span></div></div>
-
-    <div class="code-spacer"></div>
-
-    <!-- workflow -->
-    <div class="code-line"><div class="line-num">15</div><div class="line-content"><span class="kw">const </span><span class="fn">workflow</span><span class="br"> = [</span><span class="cm">&nbsp;// Agile · Git</span></div></div>
-    <div class="cells-line"><div class="line-num" style="font-size:9px;padding-top:0.65rem;">↳</div><div class="cells-row"><div class="s-cell"><div class="s-cell-sub">metodologia</div><div class="s-cell-name">Agile / Scrum</div></div><div class="s-cell"><div class="s-cell-sub">versionamento</div><div class="s-cell-name">Git / GitHub</div></div></div></div>
-    <div class="code-line"><div class="line-num">16</div><div class="line-content"><span class="br">]</span></div></div>
-
-    </div>
-</div>
-</section>
-
-<!-- PROJETOS -->
-<section class="sec" id="projetos">
-<div class="sec-label">projetos</div>
-<div class="proj-grid">
-
-    <div class="proj-card feat" onclick="openModal('blog')">
-    <div class="proj-thumb" style="height:260px">
-        <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%"><rect width="800" height="260" fill="#0d0a1a"/><ellipse cx="400" cy="130" rx="320" ry="110" fill="rgba(184,124,255,0.03)"/><rect x="100" y="28" width="600" height="204" rx="8" fill="none" stroke="rgba(184,124,255,0.2)" stroke-width="1.5"/><rect x="100" y="28" width="600" height="28" fill="rgba(184,124,255,0.07)"/><circle cx="118" cy="42" r="4" fill="rgba(255,100,100,0.5)"/><circle cx="132" cy="42" r="4" fill="rgba(255,200,50,0.5)"/><circle cx="146" cy="42" r="4" fill="rgba(80,220,100,0.5)"/><rect x="170" y="37" width="300" height="10" rx="5" fill="rgba(184,124,255,0.15)"/><text x="320" y="46" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="rgba(184,124,255,0.6)">rossinoli-anime.blogspot.com</text><rect x="112" y="66" width="576" height="38" rx="4" fill="rgba(184,124,255,0.1)"/><text x="400" y="90" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="rgba(212,168,255,0.85)" font-weight="700">ANIME WORLD — BLOG</text><rect x="112" y="116" width="178" height="100" rx="4" fill="rgba(184,124,255,0.06)" stroke="rgba(184,124,255,0.14)" stroke-width="1"/><rect x="116" y="120" width="170" height="52" rx="3" fill="rgba(184,124,255,0.1)"/><rect x="120" y="180" width="90" height="7" rx="3" fill="rgba(184,124,255,0.28)"/><rect x="302" y="116" width="178" height="100" rx="4" fill="rgba(184,124,255,0.06)" stroke="rgba(184,124,255,0.14)" stroke-width="1"/><rect x="306" y="120" width="170" height="52" rx="3" fill="rgba(184,124,255,0.1)"/><rect x="310" y="180" width="110" height="7" rx="3" fill="rgba(184,124,255,0.28)"/><rect x="492" y="116" width="196" height="100" rx="4" fill="rgba(184,124,255,0.06)" stroke="rgba(184,124,255,0.14)" stroke-width="1"/><rect x="496" y="120" width="188" height="52" rx="3" fill="rgba(184,124,255,0.1)"/><rect x="500" y="180" width="120" height="7" rx="3" fill="rgba(184,124,255,0.28)"/><text x="400" y="246" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(184,124,255,0.38)" letter-spacing="3">GOOGLE BLOGGER · CONTEÚDO · WEB</text></svg>
-        <div class="proj-thumb-overlay"></div>
-    </div>
-    <div class="proj-body"><span class="proj-badge">destaque · conteúdo</span><div class="proj-num">projeto 001</div><div class="proj-title">Blog de Anime</div><p class="proj-desc">Blog editorial no Google Blogger com resenhas, listas e artigos sobre animes — o primeiro projeto web da Thaina, antes mesmo da programação.</p><div class="proj-tags"><span class="proj-tag">Google Blogger</span><span class="proj-tag">Conteúdo Web</span><span class="proj-tag">Editorial</span><span class="proj-tag">Anime</span></div><div class="proj-footer"><button class="btn-saiba" onclick="event.stopPropagation();openModal('blog')">saiba mais</button></div></div>
-    </div>
-
-    <div class="proj-card" onclick="openModal('librando')">
-    <div class="proj-thumb"><svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%"><rect width="400" height="200" fill="#0d0a1a"/><circle cx="200" cy="100" r="110" fill="none" stroke="rgba(184,124,255,0.07)" stroke-width="38"/><circle cx="200" cy="100" r="44" fill="rgba(184,124,255,0.14)"/><rect x="178" y="68" width="10" height="42" rx="5" fill="#b87cff"/><rect x="193" y="60" width="10" height="50" rx="5" fill="#d4a8ff"/><rect x="208" y="64" width="10" height="46" rx="5" fill="#b87cff"/><rect x="223" y="72" width="10" height="38" rx="5" fill="#d4a8ff" opacity="0.7"/></svg><div class="proj-thumb-overlay"></div></div>
-    <div class="proj-body"><div class="proj-num">projeto 002</div><div class="proj-title">Librando e Aprendendo</div><p class="proj-desc">Jogo educativo interativo para aprender Libras — tecnologia a serviço da inclusão social.</p><div class="proj-tags"><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Inclusão</span></div><div class="proj-footer"><button class="btn-saiba" onclick="event.stopPropagation();openModal('librando')">saiba mais</button><a class="btn-gh" href="https://github.com/rossinoli/Librando-e-aprendendo" target="_blank" onclick="event.stopPropagation()">GitHub →</a></div></div>
-    </div>
-
-    <div class="proj-card" onclick="openModal('portfolio')">
-    <div class="proj-thumb"><svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%"><rect width="400" height="200" fill="#0d0a1a"/><g opacity="0.75"><rect x="140" y="40" width="14" height="14" fill="#b87cff"/><rect x="154" y="40" width="14" height="14" fill="#d4a8ff"/><rect x="168" y="40" width="14" height="14" fill="#b87cff"/><rect x="126" y="54" width="14" height="14" fill="#7c3aed"/><rect x="140" y="54" width="14" height="14" fill="#d4a8ff"/><rect x="154" y="54" width="14" height="14" fill="#e879f9"/><rect x="168" y="54" width="14" height="14" fill="#d4a8ff"/><rect x="182" y="54" width="14" height="14" fill="#7c3aed"/><rect x="140" y="82" width="14" height="14" fill="#d4a8ff"/><rect x="154" y="82" width="14" height="14" fill="#b87cff"/><rect x="154" y="96" width="14" height="14" fill="#7c3aed"/></g></svg><div class="proj-thumb-overlay"></div></div>
-    <div class="proj-body"><div class="proj-num">projeto 003</div><div class="proj-title">Portfólio Digital</div><p class="proj-desc">HTML, CSS e Bootstrap com pixel art criada à mão no Aseprite como identidade visual única.</p><div class="proj-tags"><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span class="proj-tag">Bootstrap</span><span class="proj-tag">Pixel Art</span></div><div class="proj-footer"><button class="btn-saiba" onclick="event.stopPropagation();openModal('portfolio')">saiba mais</button><a class="btn-gh" href="https://github.com/rossinoli/portfolio" target="_blank" onclick="event.stopPropagation()">GitHub →</a></div></div>
-    </div>
-
-    <div class="proj-card" onclick="openModal('cassino')">
-    <div class="proj-thumb"><svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%"><rect width="400" height="200" fill="#0d0a1a"/><rect x="50" y="45" width="100" height="58" rx="4" fill="none" stroke="rgba(184,124,255,0.45)" stroke-width="1.5"/><text x="100" y="77" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(184,124,255,0.85)">usuarios</text><rect x="245" y="30" width="105" height="58" rx="4" fill="none" stroke="rgba(212,168,255,0.45)" stroke-width="1.5"/><text x="297" y="62" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(212,168,255,0.85)">apostas</text><rect x="148" y="116" width="104" height="48" rx="4" fill="none" stroke="rgba(164,118,255,0.5)" stroke-width="1.5"/><text x="200" y="143" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(184,124,255,0.9)">jogos</text></svg><div class="proj-thumb-overlay"></div></div>
-    <div class="proj-body"><div class="proj-num">projeto 004</div><div class="proj-title">Cassino com Banco de Dados</div><p class="proj-desc">Modelagem relacional completa para sistema de cassino — diagramas ER e scripts SQL avançados.</p><div class="proj-tags"><span class="proj-tag">MySQL</span><span class="proj-tag">SQL</span><span class="proj-tag">Modelagem ER</span></div><div class="proj-footer"><button class="btn-saiba" onclick="event.stopPropagation();openModal('cassino')">saiba mais</button></div></div>
-    </div>
-
-    <div class="proj-card" onclick="openModal('figma')">
-    <div class="proj-thumb"><svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%"><rect width="400" height="200" fill="#0d0a1a"/><rect x="55" y="28" width="290" height="144" rx="6" fill="none" stroke="rgba(184,124,255,0.22)" stroke-width="1.5"/><rect x="55" y="28" width="290" height="22" fill="rgba(184,124,255,0.07)"/><rect x="75" y="63" width="115" height="50" rx="3" fill="rgba(184,124,255,0.06)" stroke="rgba(184,124,255,0.18)" stroke-width="1"/><rect x="83" y="73" width="65" height="8" rx="3" fill="rgba(184,124,255,0.32)"/><circle cx="272" cy="82" r="22" fill="rgba(184,124,255,0.1)" stroke="rgba(184,124,255,0.22)" stroke-width="1"/></svg><div class="proj-thumb-overlay"></div></div>
-    <div class="proj-body"><div class="proj-num">projeto 005</div><div class="proj-title">Prototipagem UX/UI — Ciranda</div><p class="proj-desc">Protótipo de alta fidelidade no Figma com foco em usabilidade e arquitetura de informação.</p><div class="proj-tags"><span class="proj-tag">Figma</span><span class="proj-tag">UX/UI</span><span class="proj-tag">Protótipo</span></div><div class="proj-footer"><button class="btn-saiba" onclick="event.stopPropagation();openModal('figma')">saiba mais</button></div></div>
-    </div>
-
-    <div class="proj-card" onclick="openModal('mobile')">
-    <div class="proj-thumb"><svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%"><rect width="400" height="200" fill="#0d0a1a"/><rect x="158" y="18" width="84" height="164" rx="12" fill="none" stroke="rgba(184,124,255,0.4)" stroke-width="2"/><rect x="164" y="30" width="72" height="140" rx="6" fill="rgba(184,124,255,0.04)"/><rect x="170" y="46" width="60" height="32" rx="4" fill="rgba(184,124,255,0.1)"/><rect x="170" y="88" width="26" height="26" rx="4" fill="rgba(184,124,255,0.13)" stroke="rgba(184,124,255,0.28)" stroke-width="1"/><rect x="204" y="88" width="26" height="26" rx="4" fill="rgba(184,124,255,0.13)" stroke="rgba(184,124,255,0.28)" stroke-width="1"/><rect x="170" y="122" width="26" height="26" rx="4" fill="rgba(184,124,255,0.13)" stroke="rgba(184,124,255,0.28)" stroke-width="1"/><rect x="204" y="122" width="26" height="26" rx="4" fill="rgba(212,168,255,0.22)" stroke="rgba(212,168,255,0.42)" stroke-width="1"/></svg><div class="proj-thumb-overlay"></div></div>
-    <div class="proj-body"><div class="proj-num">projeto 006</div><div class="proj-title">Jogo Educativo Mobile</div><p class="proj-desc">Java nativo com Android Studio — animação e transição como ferramentas pedagógicas reais.</p><div class="proj-tags"><span class="proj-tag">Java</span><span class="proj-tag">Android Studio</span><span class="proj-tag">Mobile</span></div><div class="proj-footer"><button class="btn-saiba" onclick="event.stopPropagation();openModal('mobile')">saiba mais</button></div></div>
-    </div>
-
-</div>
-</section>
-
-<!-- CONTATO -->
-<section class="sec sec-bg" id="contato">
-<div class="sec-label">contato</div>
-<div class="contato-layout">
-    <div>
-    <h3 class="contato-headline">vamos<br><span class="p">trabalhar</span><br>juntos?</h3>
-    <p class="contato-sub">Disponível para novos desafios em desenvolvimento e análise de sistemas. Se você busca uma profissional para transformar requisitos em soluções reais, vamos conversar.</p>
-    <a href="https://api.whatsapp.com/send/?phone=" target="_blank" class="btn-p">enviar mensagem</a>
-    </div>
-    <div class="contato-links">
-    <a href="https://github.com/rossinoli" class="c-link" target="_blank">
-        <div class="c-icon">GH</div>
-        <div class="c-info"><div class="c-platform">GitHub</div><div class="c-handle">github.com/rossinoli</div></div>
-    </a>
-    <a href="https://instagram.com/thai_rossinoli" class="c-link" target="_blank">
-        <div class="c-icon">IG</div>
-        <div class="c-info"><div class="c-platform">Instagram</div><div class="c-handle">@thai_rossinoli</div></div>
-    </a>
-    </div>
-</div>
-</section>
-
-<section id="quotes">
-<div class="quotes-wrapper">
-    <div class="quotes-deco">"</div>
-    <div class="quotes-track" id="quotesTrack"></div>
-    <div class="quotes-nav">
-    <div class="quotes-arrows">
-        <button class="q-arrow" id="qPrev" aria-label="anterior">←</button>
-        <button class="q-arrow" id="qNext" aria-label="próxima">→</button>
-    </div>
-    <div class="quotes-dots" id="quotesDots"></div>
-    <div class="quotes-counter"><span id="qCurrent">1</span> / <span id="qTotal">1</span></div>
-    </div>
-</div>
-</section>
-
-<footer>
-<div class="f-copy">© 2025 thaina rossinoli — todos os direitos reservados</div>
-<a href="https://www.fateclins.edu.br/web/" target="_blank" rel="noopener noreferrer"><img src="fatec.png" alt="Logo Thainá" class="footer-logo"></a>
-
-</footer>
-
-<!-- ===== MODAIS ===== -->
-<div class="modal-backdrop" id="modal-backdrop" onclick="closeModal(event)">
-<div class="modal" id="modal-box">
-    <button class="modal-close" onclick="closeModal()">fechar ✕</button>
-    <div class="modal-thumb" id="modal-thumb"></div>
-    <div class="modal-body">
-    <div class="modal-badge" id="modal-badge"></div>
-    <h2 class="modal-title" id="modal-title"></h2>
-    <p class="modal-desc" id="modal-desc"></p>
-    <div class="modal-section-label">tecnologias utilizadas</div>
-    <div class="modal-tags" id="modal-tags"></div>
-    <div class="modal-section-label">detalhes do projeto</div>
-    <div class="modal-details" id="modal-details"></div>
-    <div class="modal-actions" id="modal-actions"></div>
-    </div>
-</div>
-</div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
